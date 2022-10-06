@@ -1,0 +1,47 @@
+@startuml
+interface Door {
+    void lock()
+    void unlock()
+    void open()
+    void close()
+    void timeOutCallback()
+    void proximityCallback()
+}
+class SensingDoor {
+- bool locked
+- bool opened
+void lock()
+void unlock()
+void open()
+void close()
+void timeOutCallback()
+void proximityCallback()
+}
+class TimedDoor {
+- bool locked
+- bool opened
+void lock()
+void unlock()
+void open()
+void close()
+void timeOutCallback()
+void proximityCallback()
+}
+
+class Sensor {
+void register(Door)
+- boolean isPersonClose()
+}
+
+class Timer {
+void register(long,Door)
+}
+
+
+TimedDoor ..|> Door
+SensingDoor ..|> Door
+TimedDoor ..> Timer
+SensingDoor ..> Sensor
+
+
+@enduml

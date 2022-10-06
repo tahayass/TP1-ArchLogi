@@ -1,0 +1,21 @@
+@startuml
+class Duck{
+void quack()
+void swim()
+}
+
+class ElectronicDuck{
+void quack()
+void swim()
+}
+
+class Pool {
+void run()
+void quack(Duck)
+void swim(Duck)
+}
+
+Pool --> Duck
+Pool --> ElectronicDuck
+
+@enduml

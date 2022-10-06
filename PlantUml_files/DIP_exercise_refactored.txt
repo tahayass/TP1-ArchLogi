@@ -1,0 +1,20 @@
+@startuml
+interface IEncodingModule {
+void encodeWithFiles()
+void encodeBasedOnNetworkAndDatabase()
+}
+class EncodingModule {
+void encodeWithFiles()
+void encodeBasedOnNetworkAndDatabase()
+}
+class EncodingModuleClient {
+{static} void main()
+}
+
+class MyDataBase{
+int Write(String)
+}
+EncodingModuleClient --> IEncodingModule
+EncodingModule --> MyDataBase
+EncodingModule ..|> IEncodingModule
+@enduml

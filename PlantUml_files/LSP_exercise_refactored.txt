@@ -1,0 +1,27 @@
+@startuml
+interface IDuck {
+void quack()
+void swim()
+}
+
+class Duck{
+void quack()
+void swim()
+}
+
+class ElectronicDuck{
+void quack()
+void swim()
+}
+
+class Pool {
+void run()
+void quack(IDuck..)
+void swim(IDuck..)
+}
+
+Pool --> IDuck
+Duck ..|> IDuck
+ElectronicDuck ..|> IDuck
+
+@enduml
